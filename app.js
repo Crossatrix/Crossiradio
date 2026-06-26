@@ -75,7 +75,13 @@ function playNextSong() {
 
     const currentSong = getRandomSong();
     audioPlayer.src = `tracks/${currentSong.name}`;
-    trackTitle.textContent = currentSong.name.replace('.mp3', '');
+    
+    // Check if optional display-name exists, otherwise fallback to filename
+    if (currentSong["display-name"]) {
+        trackTitle.textContent = currentSong["display-name"];
+    } else {
+        trackTitle.textContent = currentSong.name.replace('.mp3', '');
+    }
     
     statusBadge.textContent = "Playing";
     statusBadge.className = "status-badge playing";
@@ -139,11 +145,9 @@ async function playNews(newsItem) {
 // When audio ends, determine what to do next
 audioPlayer.onended = () => {
     if (isNewsPlaying) {
-        // News finished, go back to random music
         isNewsPlaying = false;
         playNextSong();
     } else {
-        // Song finished, play next song
         playNextSong();
     }
 };
