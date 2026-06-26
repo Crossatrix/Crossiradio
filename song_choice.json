@@ -1,10 +1,18 @@
 [
   {
     "name": "Neon Pulse 2.mp3",
-    "probability": "50"
+    "probability": "30"
   },
   {
     "name": "Neon Spike 3.mp3",
-    "probability": "50"
+    "probability": "30"
+  },
+  {
+    "name": "Crossatrix Comeback.mp3",
+    "probability": "10"
+  },
+  {
+    "name": "Falling Keys.mp3",
+    "probability": "30"
   }
 ]
