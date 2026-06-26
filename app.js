@@ -16,12 +16,12 @@ const transcriptText = document.getElementById('transcript-text');
 // Init
 window.addEventListener('DOMContentLoaded', async () => {
     try {
-        // Absolute Pfade vom Root ('/'), um Fehler bei Custom Domains zu vermeiden
-        const songResponse = await fetch('/song_choice.json');
+        // Relativ zum aktuellen Verzeichnis ('./'), um Base-URL-Fehler auf Custom Domains zu umgehen
+        const songResponse = await fetch('./song_choice.json');
         if (!songResponse.ok) throw new Error(`HTTP error! status: ${songResponse.status}`);
         songs = await songResponse.json();
         
-        const newsResponse = await fetch('/news.json');
+        const newsResponse = await fetch('./news.json');
         if (!newsResponse.ok) throw new Error(`HTTP error! status: ${newsResponse.status}`);
         newsSchedule = await newsResponse.json();
     } catch (error) {
@@ -77,8 +77,8 @@ function playNextSong() {
     if (!isPlaying || isNewsPlaying) return;
 
     const currentSong = getRandomSong();
-    // Absoluter Pfad für den Audio-Ordner
-    audioPlayer.src = `/tracks/${currentSong.name}`;
+    // Relativer Pfad für den Audio-Ordner
+    audioPlayer.src = `./tracks/${currentSong.name}`;
     
     // Check if optional display-name exists, otherwise fallback to filename
     if (currentSong["display-name"]) {
@@ -127,8 +127,8 @@ async function playNews(newsItem) {
 
     // Load transcript
     try {
-        // Absoluter Pfad für News-Transkripte
-        const transResponse = await fetch(`/news/${newsItem.transcript}`);
+        // Relativer Pfad für News-Transkripte
+        const transResponse = await fetch(`./news/${newsItem.transcript}`);
         if (transResponse.ok) {
             const text = await transResponse.text();
             transcriptText.textContent = text;
@@ -143,7 +143,7 @@ async function playNews(newsItem) {
     }
 
     // Play News Audio
-    audioPlayer.src = `/news/${newsItem.name}`;
+    audioPlayer.src = `./news/${newsItem.name}`;
     audioPlayer.play().catch(e => console.log("News playback error:", e));
 }
 
