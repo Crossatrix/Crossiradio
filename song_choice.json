@@ -1,0 +1,14 @@
+[
+  {
+    "name": "example1.mp3",
+    "probability": "50"
+  },
+  {
+    "name": "example2.mp3",
+    "probability": "30"
+  },
+  {
+    "name": "example3.mp3",
+    "probability": "20"
+  }
+]
