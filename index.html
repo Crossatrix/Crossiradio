@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crossiradio - Your Live Stream</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="radio-container">
+        <header>
+            <h1>Crossiradio</h1>
+            <p class="subtitle">Your personalized radio program</p>
+        </header>
+
+        <main>
+            <div class="player-card">
+                <div class="status-badge" id="status-badge">Ready</div>
+                <div class="now-playing">
+                    <h2>Now Playing:</h2>
+                    <p id="track-title">Click play to start listening</p>
+                </div>
+
+                <button id="play-btn" class="play-button">Play Radio</button>
+            </div>
+
+            <div id="news-box" class="news-box hidden">
+                <h3>Latest News Transcript</h3>
+                <p id="transcript-text">No news playing at the moment.</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Crossiradio. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
