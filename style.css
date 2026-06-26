@@ -1,0 +1,139 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --accent-color: #3b82f6;
+    --accent-hover: #2563eb;
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --news-color: #ef4444;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.radio-container {
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+}
+
+.player-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--text-muted);
+    color: var(--bg-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-badge.playing {
+    background: var(--accent-color);
+    color: white;
+}
+
+.status-badge.news {
+    background: var(--news-color);
+    color: white;
+}
+
+.now-playing {
+    margin: 20px 0 30px 0;
+}
+
+.now-playing h2 {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+#track-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.play-button {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 14px 40px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    width: 100%;
+}
+
+.play-button:hover {
+    background-color: var(--accent-hover);
+}
+
+.play-button:active {
+    transform: scale(0.98);
+}
+
+.news-box {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid var(--news-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.news-box h3 {
+    font-size: 1rem;
+    color: var(--news-color);
+    margin-bottom: 8px;
+}
+
+#transcript-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+
+.hidden {
+    display: none;
+}
