@@ -1,0 +1,12 @@
+[
+  {
+    "name": "news1.mp3",
+    "transcript": "transcript1.txt",
+    "time": "13:03"
+  },
+  {
+    "name": "news2.mp3",
+    "transcript": "transcript2.txt",
+    "time": "18:00"
+  }
+]
